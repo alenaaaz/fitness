@@ -1,6 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Кастомные стили */
+@layer components {
+  .btn-primary {
+    @apply bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded transition-colors;
+  }
+}
+
 @import "tailwindcss";
 
 @theme {
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+/* globals.css */
+.fc-event {
+  transition: all 0.2s ease;
+}
+
+.fc-event:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Стили для FullCalendar */
+.fc {
+  @apply font-sans;
+}
+
+.fc-event {
+  @apply cursor-pointer border-none;
+}
+
+.fc-daygrid-event {
+  @apply rounded-md px-2 py-1 text-sm;
+}
+
+.fc-toolbar-title {
+  @apply text-lg font-semibold;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.2s ease-out;
 }

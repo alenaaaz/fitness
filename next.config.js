@@ -6,5 +6,7 @@ import "./src/env.js";
 
 /** @type {import("next").NextConfig} */
 const config = {};
+// @ts-ignore
 
 export default config;
+// @ts-ignore
