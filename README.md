@@ -1,29 +1,61 @@
-# Create T3 App
+# FitnessApp
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+**FitnessApp** — это веб-приложение для планирования, назначения и отслеживания тренировок. Проект разработан на стеке T3 (Next.js, TypeScript, Tailwind CSS, TRPC, Prisma и PostgreSQL). Приложение позволяет тренерам взаимодействовать с клиентами, создавать программы тренировок и отслеживать прогресс, а клиентам — получать индивидуальные программы и расписание занятий.
 
-## What's next? How do I make an app with this?
+## Технологии
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
+- **Next.js** (App Router, SSR/CSR)
+- **TypeScript**
+- **Tailwind CSS**
+- **TRPC** — для типобезопасного API
+- **Prisma** — ORM для работы с PostgreSQL
+- **NextAuth.js** — аутентификация
+- **FullCalendar** — визуализация расписания
+- **Vitest** — unit-тесты
+- **Playwright** — end-to-end тестирование
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
+## Роли и возможности
 
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Drizzle](https://orm.drizzle.team)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
+### Администратор *(в перспективе)*
 
-## Learn More
+- Просмотр всех пользователей
+- Добавление и редактирование пользователей
+- Управление связями тренеров и клиентов
+  
+### Тренер
 
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
+- Просмотр списка своих клиентов
+- Создание тренировок и их назначение одному или нескольким клиентам
+- Редактирование тренировок и обновление списка назначенных клиентов
+- Просмотр расписания тренировок каждого клиента
+- Удаление тренировок
+- Отображение назначенных программ на странице клиентов
 
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
+### Пользователь (Клиент)
 
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
+- Просмотр списка назначенных тренировок
+- Просмотр и ведение расписания тренировок в формате календаря (месяц / неделя / день)
+- Доступ к подробной информации о тренировке (название, тип, описание, упражнения)
+- Возможность видеть только свои тренировки
 
-## How do I deploy this?
+## Установка и запуск
 
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+# Установка зависимостей
+pnpm install
+
+# Генерация Prisma-моделей
+pnpm prisma generate
+
+# Применение миграций
+pnpm prisma migrate dev
+
+# Запуск проекта
+pnpm dev
+
+##Тестирование
+
+#Запуск unit-тестов (Vitest):
+pnpm test
+
+#Запуск e2e-тестов (Playwright):
+pnpm test:e2e
